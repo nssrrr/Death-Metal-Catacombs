@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'kg-no-regrets';
+    src: url('./fonts/KGNoRegretsSolid.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  body {
+    font-family: 'kg-no-regrets', sans-serif;
+  }
+  

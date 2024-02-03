@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "imperial roman";
+  src: url("../assets/fonts/imperialbt.ttf") format("truetype");
+  font-weight: 2;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "imperial roman", sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+.content-wrap {
+  display: flex;
+}
+
+.main-page {
+  width: inherit;
+  height: inherit;
+  font-size: 49px;
+  font-weight: 30;
+  color: rgb(255, 255, 255, 1);
+}
+.image-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  color: white;
+  filter: brightness(50%);
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: calc(250px + 50%);
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+  color: #ffffff;
+  width: 50%;
+  word-wrap: break-word;
+}
+
+.overlay-image {
+  filter: brightness(50%);
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.sidebar {
+  background-color: rgb(33, 33, 33);
+  width: 250px;
+  height: inherit;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar-title {
+  font-size: 27px;
+  margin-bottom: 20px;
+  color: #fff;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+
+.sidebar-nav {
+  margin-top: 60px;
+  position: relative;
+  left: 0;
+  padding-right: 30px;
+}
