@@ -3,7 +3,7 @@
     <div class="sidebar">
       <h3 class="sidebar-title">Death Metal Catacombs</h3>
       <nav class="sidebar-nav">
-        <app-menu-list [menus]="menus" [depth]="1"></app-menu-list>
+        <app-menu-list [menus]="menus" [depth]="1" (tabChange)="changeTab($event)"></app-menu-list>
       </nav>
     </div>
   </div>

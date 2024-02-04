@@ -1,7 +1,7 @@
 
   <ul [ngStyle]="{ 'padding-left': (depth > 1 ? depth * 8 + 24 : 0) + 'px'}">
   <ng-container *ngFor="let menuItem of menus">
-    <li class="menu-list" (click)="changeTab(menuItem)" [ngStyle]="{ 'margin-left': menuItem.hasSubMenu ? '-24px' : '0'}">
+    <li class="menu-list" (click)="changeTab($event, menuItem)" [ngStyle]="{ 'margin-left': menuItem.hasSubMenu ? '-24px' : '0'}">
     <div class="list-container">
       <span *ngIf="menuItem.hasSubMenu" class="list-arrow rotate-arrow" [class.open]="menuItem.expand"
       (click)="expand($event, menuItem)">
@@ -20,9 +20,12 @@
       {{ menuItem.title }}
     </span>
     </div>
-    <ng-container *ngIf="menuItem.hasSubMenu && menuItem.subMenus && menuItem.expand">
-        <app-menu-list class="submenu" [menus]="menuItem.subMenus" [depth]="depth + 1"></app-menu-list>
+    <ng-container *ngIf="menuItem.hasSubMenu && menuItem.subMenus">
+      <div [@expandCollapse]="menuItem.expand ? 'expanded' : 'collapsed'" class="submenu">
+        <app-menu-list [menus]="menuItem.subMenus" [depth]="depth + 1" (tabChange)="passToParent($event,menuItem)"></app-menu-list>
+      </div>
     </ng-container>
+
   </li>
   </ng-container>
 </ul>

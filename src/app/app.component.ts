@@ -25,6 +25,14 @@ export class AppComponent {
       expand: false,
       pageTitle: 'Black Metal !',
       background: 'black-metal.jpeg',
+      subMenus: [
+        {
+          title: 'Finnish, Norwegian and Swedish Bands',
+          hasSubMenu: false,
+          pageTitle: 'Finnish, Norwegian and Swedish Bands',
+          background: 'fin-nord-swed.jpeg',
+        }
+      ]
     },
     {
       title: 'OSBDM Bible',
@@ -38,6 +46,23 @@ export class AppComponent {
       expand: false,
       pageTitle: "90's Brutal Death Metal Bands",
       background: 'osdm-bible.jpeg',
+      subMenus: [
+        {
+          title: 'Releases',
+          hasSubMenu: true,
+          expand: false,
+          pageTitle: 'Releases',
+          background: 'releases.jpeg',
+          subMenus: [
+            {
+              title: 'Copy of 1990 Brutal Death Metal Map',
+              hasSubMenu: false,
+              pageTitle: '1990 Brutal Death Metal Releases',
+              background: 'releases.jpeg'
+            }
+          ]
+        }
+      ]
     },
     {
       title: 'Brutal DM Releases',
@@ -46,16 +71,9 @@ export class AppComponent {
       subMenus: [
         {
           title: '1989 Brutal Death Metal Map',
-          hasSubMenu: true,
+          hasSubMenu: false,
           pageTitle: '1989 Brutal Death Metal Releases',
           background: '89bdm.jpeg',
-          open: true,
-          subMenus: [
-            {
-              title: '2001 Death Metal Map',
-              hasSubMenu: true
-            }
-          ]
         },
         {
           title: '1990 Brutal Death Metal Map',
@@ -79,7 +97,7 @@ export class AppComponent {
           title: '1993 Brutal Death Metal Map',
           hasSubMenu: false,
           pageTitle: '1993 Brutal Death Metal Releases',
-          background: '93bdm.jpeg',
+          background: 'home.jpeg',
 
         },
         {
@@ -103,13 +121,14 @@ export class AppComponent {
       ],
     },
     { title: 'Bands', hasSubMenu: false },
-  ];
+];
   activeMenu = this.menus[0];
 
   ngOnInit() {
   }
 
   changeTab(menu: any) {
+    console.log(menu)
     this.activeMenu = menu.background ? menu : this.activeMenu;
   }
 
