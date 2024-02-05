@@ -1,7 +1,7 @@
 
-  <ul [ngStyle]="{ 'padding-left': (depth > 1 ? depth * 8 + 24 : 0) + 'px'}">
+  <ul [ngStyle]="{ 'padding-left': (depth-1) * 20 + 'px'}">
   <ng-container *ngFor="let menuItem of menus">
-    <li class="menu-list" (click)="changeTab($event, menuItem)" [ngStyle]="{ 'margin-left': menuItem.hasSubMenu ? '-24px' : '0'}">
+    <li class="menu-list" (click)="changeTab($event, menuItem)" [ngStyle]="{ 'margin-left': menuItem.hasSubMenu || depth > 2 ? '0' : '24px'}">
     <div class="list-container">
       <span *ngIf="menuItem.hasSubMenu" class="list-arrow rotate-arrow" [class.open]="menuItem.expand"
       (click)="expand($event, menuItem)">

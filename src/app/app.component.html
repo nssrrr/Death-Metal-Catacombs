@@ -1,12 +1,12 @@
 <div class="content-wrap">
   <div class="sidebar">
-    <div class="sidebar">
       <h3 class="sidebar-title">Death Metal Catacombs</h3>
       <nav class="sidebar-nav">
         <app-menu-list [menus]="menus" [depth]="1" (tabChange)="changeTab($event)"></app-menu-list>
       </nav>
-    </div>
   </div>
-  <div class="image-container" [ngStyle]="{'background': 'url(\'../assets/images/' + activeMenu.background + '\')'}"></div>
-  <div class="centered-text">{{ activeMenu.pageTitle }}</div>
+  <div class="content">
+    <div class="image-container" [ngStyle]="{'background': 'url(\'../assets/images/' + activeMenu.background + '\')'}"></div>
+    <div class="centered-text">{{ activeMenu.pageTitle }}</div>
+  </div>
 </div>
